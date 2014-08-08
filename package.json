@@ -31,8 +31,8 @@
     "casperjs": "~1.1.0-beta3"
   },
   "scripts": {
-    "test": "./node_modules/.bin/browserify lib/browser-get.js -s get -o test/browser-get.js && ./node_modules/.bin/casperjs test test/browser-get.js",
-    "browser": "mkdir -p dist && ./node_modules/.bin/browserify lib/browser-get.js -s get -o dist/browser-get.js && ./node_modules/.bin/uglifyjs dist/browser-get.js -m -c sequences,dead_code,conditionals,booleans,unused,if_return,join_vars,drop_console -o dist/browser-get.min.js"
+    "test": "browserify lib/browser-get.js -s get -o test/browser-get.js && casperjs test test/browser-get_test.js",
+    "browser": "mkdir -p dist && browserify lib/browser-get.js -s get -o dist/browser-get.js && uglifyjs dist/browser-get.js -m -c sequences,dead_code,conditionals,booleans,unused,if_return,join_vars,drop_console -o dist/browser-get.min.js"
   },
   "dependencies": {
     "es6-promise": "~1.0.0"

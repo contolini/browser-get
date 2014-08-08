@@ -1,6 +1,6 @@
 # browser-get [![Build Status](https://secure.travis-ci.org/contolini/browser-get.png?branch=master)](http://travis-ci.org/contolini/browser-get)
 
-> IE8+ compatible GET requests for the browser
+> IE8+ compatible GET requests for the browser. Includes an ES6 promise polyfill.
 
 ## Installation
 

@@ -1,36 +1,17 @@
-'use strict';
+casper.test.begin('Main page test', 3, function suite(test) {
 
-var browserGet = require('../lib/browser-get.js');
+    casper.start('test/index.html', function() {
+        test.assertTitle('Test page', 'page title is set correctly');
+        test.assertExists('textarea', 'textarea exists');
+    });
 
-/*
-  ======== A Handy Little Nodeunit Reference ========
-  https://github.com/caolan/nodeunit
+    casper.then(function() {
+        this.wait(1000, function() {
+            test.assertField('console', '{\"data\":\"foo\"}');
+        });
+    });
 
-  Test methods:
-    test.expect(numAssertions)
-    test.done()
-  Test assertions:
-    test.ok(value, [message])
-    test.equal(actual, expected, [message])
-    test.notEqual(actual, expected, [message])
-    test.deepEqual(actual, expected, [message])
-    test.notDeepEqual(actual, expected, [message])
-    test.strictEqual(actual, expected, [message])
-    test.notStrictEqual(actual, expected, [message])
-    test.throws(block, [error], [message])
-    test.doesNotThrow(block, [error], [message])
-    test.ifError(value)
-*/
-
-exports.browserGet = {
-  setUp: function(done) {
-    // setup here
-    done();
-  },
-  'no args': function(test) {
-    test.expect(1);
-    // tests here
-    test.equal(browserGet.awesome(), 'awesome', 'should be awesome.');
-    test.done();
-  }
-};
+    casper.run(function() {
+        test.done();
+    });
+});
