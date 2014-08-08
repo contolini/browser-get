@@ -2,7 +2,7 @@
   "name": "browser-get",
   "version": "0.1.0",
   "main": "lib/browser-get.js",
-  "description": "IE8+ compatible GET requests for the browser",
+  "description": "IE8+ GET requests for the browser with an ES6 Promise interface.",
   "homepage": "http://github.com/contolini/browser-get",
   "bugs": "https://github.com/contolini/browser-get/issues",
   "author": {
