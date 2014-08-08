@@ -7,7 +7,7 @@
 Grab the `dist/browser-get.js` file and include it at the bottom of your page:
 
 ```html
-<script src="objectified.js"></script>
+<script src="browser-get.js"></script>
 ```
 
 Or use [Browserify](http://browserify.org/):
