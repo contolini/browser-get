@@ -11,12 +11,12 @@
 
 var Promise = _dereq_('es6-promise').Promise;
 
-var get = function( url ) {
+var get = function( url, verb ) {
 
   return new Promise(function( resolve, reject ) {
 
     var req = new XMLHttpRequest();
-    req.open( 'GET', url, true );
+    req.open( verb || 'GET', url, true );
 
     req.onreadystatechange = function() {
       if ( this.readyState === 4 ){
@@ -35,6 +35,7 @@ var get = function( url ) {
 };
 
 module.exports = get;
+
 },{"es6-promise":3}],2:[function(_dereq_,module,exports){
 // shim for using process in browser
 
